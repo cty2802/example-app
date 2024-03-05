@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
+use App\Models\Chirp;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class ChirpController extends Controller
 {
-//    /**
-//     * Display a listing of the resource.
-//     */
-//    public function index(): Response
-//    {
-//        return response('Hello, World!');
-//    }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index(): View
     {
         return view('chirps.index', [
@@ -50,7 +45,7 @@ class ChirpController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Chirp|\App\Http\Controllers\Chirp $chirp)
+    public function show(Chirp $chirp)
     {
         //
     }
@@ -58,8 +53,9 @@ class ChirpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Chirp|\App\Http\Controllers\Chirp $chirp): View
+    public function edit(Chirp $chirp): View
     {
+        //
         $this->authorize('update', $chirp);
 
         return view('chirps.edit', [
@@ -70,7 +66,7 @@ class ChirpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Chirp|\App\Http\Controllers\Chirp $chirp): RedirectResponse
+    public function update(Request $request, Chirp $chirp): RedirectResponse
     {
         $this->authorize('update', $chirp);
 
@@ -86,7 +82,7 @@ class ChirpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Chirp|\App\Http\Controllers\Chirp $chirp): RedirectResponse
+    public function destroy(Chirp $chirp): RedirectResponse
     {
         $this->authorize('delete', $chirp);
 
