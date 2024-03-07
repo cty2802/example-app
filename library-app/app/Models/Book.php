@@ -28,5 +28,4 @@ class Book extends Model {
     public function availableCopies(): int {
         return $this->copies_in_circulation - $this->activeLoans();
     }
-
 }
