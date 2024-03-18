@@ -4,6 +4,9 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Voyager;
+use App\Unknown;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
